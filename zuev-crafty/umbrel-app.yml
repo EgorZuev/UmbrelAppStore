@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: crafty-controller                 # строчные буквы и дефисы
+category: utilities
+name: Crafty Controller
+version: "4.4.0"
+tagline: Панель управления Minecraft-серверами
+description: >-
+  Crafty Controller — открытый веб-интерфейс для установки,
+  запуска и резервного копирования Java и Bedrock серверов Minecraft.
+releaseNotes: >-
+  Первая сборка для Umbrel OS.  HTTPS-панель защищена
+  Umbrel SSO, все данные хранятся в `$APP_DATA_DIR`.
+developer: Crafty Controller Team
+website: https://craftycontrol.com
+repo: https://gitlab.com/crafty-controller/crafty-4
+support: https://discord.gg/crafty
+dependencies: [ ]
+port: 8443                            # внутренний порт панели
+gallery: [ 1.jpg, 2.jpg ]
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: YOUR_NAME
+submission: ""
