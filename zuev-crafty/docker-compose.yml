@@ -6,7 +6,6 @@ services:
       # <app-id>_<service-name>_1  — строго так, с суффиксом _1
       APP_HOST: zuev-crafty_crafty-container_1
       APP_PORT: 8443               # внутренний HTTPS-порт Crafty
-      PROXY_AUTH_ADD: "false"
 
   crafty-container:
     image: registry.gitlab.com/crafty-controller/crafty-4:latest
