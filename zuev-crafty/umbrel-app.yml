@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: crafty-controller                 # строчные буквы и дефисы
+id: zuev-crafty-controller                 # строчные буквы и дефисы
 category: utilities
 name: Crafty Controller
 version: "4.4.0"
