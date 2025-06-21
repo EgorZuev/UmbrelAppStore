@@ -11,6 +11,7 @@ services:
 
   crafty-container:
     image: arcadiatechnology/crafty-4:latest
+    container_name: crafty-container
     restart: on-failure
     stop_grace_period: 1m
     environment:
