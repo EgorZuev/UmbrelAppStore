@@ -3,18 +3,22 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: zuev-crafty_crafty-container_1  # не трогаем
-      APP_PORT: 8443                            # или 8000, если отключили SSL
+      # <app-id>_<service-name>_1  — строго так, с суффиксом _1
+      APP_HOST: zuev-crafty_crafty-container_1
+      APP_PORT: 8443               # внутренний HTTPS-порт Crafty
+      # если не нужен SSO, добавьте: PROXY_AUTH_ADD: "false"
 
   crafty-container:
-    # container_name: crafty-container   ← ЭТУ строку удалить!
     image: registry.gitlab.com/crafty-controller/crafty-4:latest
+    container_name: crafty-container
     restart: on-failure
+    stop_grace_period: 1m
     environment:
       TZ: Europe/Moscow
+    # Порты для игровых серверов — оставлены как в оригинале
     ports:
-      - "25500-25600:25500-25600"
-      - "19132:19132/udp"
+      - "25500-25600:25500-25600"   # Java-серверы (TCP)
+      - "19132:19132/udp"           # Bedrock-сервер (UDP)
     volumes:
       - ${APP_DATA_DIR}/backups:/crafty/backups
       - ${APP_DATA_DIR}/logs:/crafty/logs
